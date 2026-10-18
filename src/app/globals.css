@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #12161c;
+  --foreground: #eaecef;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181a20;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b313a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #474d57;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(24, 26, 32, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(43, 49, 58, 0.7);
+}
+
+.glass-card {
+  background: rgba(30, 35, 41, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(43, 49, 58, 0.6);
+}
+
+/* Print styling for SENIAT / SUDEBAN physical audit reports */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .glass-panel, .glass-card {
+    background: #ffffff !important;
+    border: 1px solid #cccccc !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    color: #000000 !important;
+    padding: 6px;
+    font-size: 11px;
+  }
+}
